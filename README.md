@@ -7,6 +7,8 @@ Have access to Edge Services in OCI.
 
 Provision an instance in OCI region. 
 
+## Step 1- Launch Webapp and add it to a domain
+
 **Install docker on this VM.**
 
 
@@ -16,27 +18,29 @@ Provision an instance in OCI region.
 
 `systemctl enable docker`
 
-
 Pull docker image of open source software ORAWASP Juice Shop application. Run this 
 application on host port 80
+
+`Run docker pull bkimminich/juice-shop`
+`Run docker run --rm -p 80:3000 bkimminich/juice-shop`
+
 Ensure that security list used by the instance has appropriate rule so that port 80 is 
-accessible from internet
+accessible from internet. 
 
-Register to website www.freenom.com to create domain (For ex.) www.trywaf.tk
+Register to website www.freenom.com to create domain (For ex.) `www.trywaf.tk`
+  
+## Step 2 Tie together OCI WAF with Web application
 
-Ensure that > DNS A record is created for your domain that resolve to public IP of OCI instance.
+Ensure that DNS A record is created for your domain that resolve to public IP of OCI instance.
 
-Create WAF policy in Oracle Edge service to protect the origin of this application i.e. the 
-public IP of instance with default port 80
+Create WAF policy in OCI Edge services to protect the origin of this application i.e. the 
+public IP of instance with default port 80. 
 
+Note down the CNAME target of this WAF policy. 
 
-Note down the CNAME target of this WAF policy
+Now make CNAME record in the DNS of your domain that maps to `www.trywaf.tk`
 
-Now make CNAME record in the DNS of your domain that maps to 
-www.trywaf.tk
-
-If you now access 
-www.trywaf.tk because of above CNAME entry, traffic reaches to 
+If you now access `www.trywaf.tk` because of above CNAME entry, traffic reaches to 
 WAF node, WAF policy is applied and then it reaches to your origin i.e. OCI instance.
 
 Access OWASP juice shop application. This application purposefully has many security 
@@ -49,14 +53,9 @@ Access OWASP juice shop application using WAF protected URL. Observe that
 application is now protected from that attack. This proves WAF policy is working to 
 prevent such attack. When using URL with public IP application works without having 
 protection from vulnerabilities
-
-## Step 1- Launch Webapp and add it to a domain
-
   
-## Step 2
-  
+## Step 3 - 
 
-## Step 3
 
 ##  Troubleshooting
   
