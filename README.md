@@ -107,6 +107,16 @@ Block Action: Show Error Page
 #### Publish
 Press Publish All
 
+
+#### User Agent
+After we have had some activity, Go to Logs and find a user Agent in a JSON file for a log.
+Go back to access rules and add new rule
+Name:Safari Browser
+Rule Condition: User Agent is 
+Value: User agent you found in Json file
+Select Block
+
+
 ### Add Protection Rules to Policy
 Go to Protection Rules under your policy.
 Filter by Rule ID (type these numbers in)
@@ -122,6 +132,8 @@ Filter by Rule ID (type these numbers in)
 950007
 Select All (Check Box next to ID)
 Select Actions: Block
+
+Can also change protection rule actions to change blocked webpages message and amount of violations to trigger a protection rules.
 
 ### Bot Management
  #### Javascript Challenge
@@ -141,9 +153,7 @@ Select Actions: Block
 Set up Client with OCI
 `oci waas threat-feed update --waas-policy-id OCID --threat-feeds '[{"key":"<key>,"action","BLOCK"}]'`
 
-#### User Agent
-### Trigger rules
-
+### Trigger the rules in a demo.
 
 #### Header Rule:
 Download ModHeader
@@ -157,10 +167,18 @@ Append to your web app URL
 Use tor browser to access website (GeoIP) from country outside US
 
 #### SQL Injection
-5;return(true);
+Enter `5;return(true);` somewhere in your application.
 
 #### PHP Vulnerability
-process.exit()
+Enter `process.exit()` into a box somewhere in your application
+
+#### JavaScript Challenge
+In postman run a get request on the main URL 11 times, on the 11th it should trigger the Javascript Challenge
+
+#### Captcha Challenge
+In a browser go to URL/captcha and it should trigger the captcha challenge
+
+
 
 
 
