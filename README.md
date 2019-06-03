@@ -7,10 +7,12 @@ Have access to Edge Services in OCI.
 
 Provision an instance in OCI region. 
 
+Download OCI Client
+`bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"` 
+
 ## Step 1- Launch Webapp and add it to a domain
 
 **Install docker on this VM.**
-
 
 `yum install docker-engine`
 
@@ -59,5 +61,4 @@ protection from vulnerabilities
 
 ##  Troubleshooting
   
-  
-  502 Error -  
+502 Error -  
