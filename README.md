@@ -193,8 +193,9 @@ In a browser go to URL/captcha and it should trigger the captcha challenge
 
 
 
-
-
+### Grafana Plugin with WAF data
+First: Set up [OCI with Grafana](https://blogs.oracle.com/cloudnative/data-source-grafana) 
+Second: 
 ##  Troubleshooting
   
 502 Error -  Is having trouble with WAF connecting to Origin
