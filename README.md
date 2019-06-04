@@ -120,7 +120,7 @@ Select Block
 ### Add Protection Rules to Policy
 Go to Protection Rules under your policy.
 Filter by Rule ID (type these numbers in)
-973335
+`973335
 933161
 960335
 981242
@@ -129,7 +129,7 @@ Filter by Rule ID (type these numbers in)
 941140
 941110
 911100
-950007
+950007`
 Select All (Check Box next to ID)
 Select Actions: Block
 
