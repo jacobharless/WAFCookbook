@@ -65,19 +65,31 @@ Open the navigation menu. Under Solutions, Platform and Edge, go to Edge Service
 
 Click Create WAF Policy.
 In the Create WAF Policy dialog box, enter the following:
+
 Policy Name: A unique name for the policy. Avoid entering confidential information.
 Domains:
+
 Primary Domain: The fully qualified domain name (FQDN) of the application where the policy will be applied.
+
 Additional Domains: (Optional) Subdomains where the policy will be applied.
+
 WAF Origin: The host or IP address of the public internet facing application that is being protected by the application. Origin Name: A unique name for the origin.
+
 URI - Enter the public facing endpoint (IPv4 or FQDN) of the application.
+
 HTTPS Port: The port used for secure HTTP connection. The default port is 443.
-HTTP Port: The HTTP port the origin listens on. The default port is 80. 
+
+HTTP Port: The HTTP port the origin listens on. The default port is 80.
+
 Header(s): (Optional)
+
 Header Name: The name displayed in the HTTP request header and the header value that can be added and passed to  the origin server with all requests.
+
 Header Value: Specifies the data requested by the header.
 
+
 Click Create WAF Policy. The WAF Policy overview appears. Expect the policy to become active within 15 minutes of creation.
+
 
 ### Add Access Control rules to Policy
 
