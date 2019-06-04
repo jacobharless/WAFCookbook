@@ -71,7 +71,7 @@ Click Create WAF Policy. The WAF Policy overview appears. Expect the policy to b
 ### Tie CNAME record to your domain
 Note down the CNAME target of this WAF policy. 
 
-Now make CNAME record in the DNS of your domain that maps to `www.trywaf.tk`
+Now make CNAME record in the DNS of your domain that maps to `www.trywaf.tk` in www.freenom.com
 
 If you now access `www.trywaf.tk` because of above CNAME entry, traffic reaches to 
 WAF node, WAF policy is applied and then it reaches to your origin i.e. OCI instance.
@@ -79,8 +79,6 @@ WAF node, WAF policy is applied and then it reaches to your origin i.e. OCI inst
 Access OWASP juice shop application. This application purposefully has many security 
 vulnerabilities. Attack certain selected security vulnerabilities and observe that 
 application is successfully attacked.
-
-
   
 ## Step 3 - Setting WAF Rules
 
