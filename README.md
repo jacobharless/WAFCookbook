@@ -35,30 +35,8 @@ Register to website www.freenom.com to create domain (For ex.) `www.trywaf.tk`
 
 Ensure that DNS A record is created for your domain that resolve to public IP of OCI instance.
 
-Create WAF policy in OCI Edge services to protect the origin of this application i.e. the 
-public IP of instance with default port 80. 
 
-Note down the CNAME target of this WAF policy. 
-
-Now make CNAME record in the DNS of your domain that maps to `www.trywaf.tk`
-
-If you now access `www.trywaf.tk` because of above CNAME entry, traffic reaches to 
-WAF node, WAF policy is applied and then it reaches to your origin i.e. OCI instance.
-
-Access OWASP juice shop application. This application purposefully has many security 
-vulnerabilities. Attack certain selected security vulnerabilities and observe that 
-application is successfully attacked.
-
-Enable WAF protection rules to this WAF policy.
-
-Access OWASP juice shop application using WAF protected URL. Observe that 
-application is now protected from that attack. This proves WAF policy is working to 
-prevent such attack. When using URL with public IP application works without having 
-protection from vulnerabilities
-  
-## Step 3 - Setting WAF Policies
-
-### Create WAD Policy:
+### Create WAF Policy in OCI:
 Select the region and compartment where the policy should be maintained (there is no constraint around the WAF co-existing with Load Balancing or other application resources in Oracle Cloud Infrastructure.
 
 Open the navigation menu. Under Solutions, Platform and Edge, go to Edge Services and click WAF Policies.
@@ -89,6 +67,23 @@ Header Value: Specifies the data requested by the header.
 
 
 Click Create WAF Policy. The WAF Policy overview appears. Expect the policy to become active within 15 minutes of creation.
+
+### Tie CNAME record to your domain
+Note down the CNAME target of this WAF policy. 
+
+Now make CNAME record in the DNS of your domain that maps to `www.trywaf.tk`
+
+If you now access `www.trywaf.tk` because of above CNAME entry, traffic reaches to 
+WAF node, WAF policy is applied and then it reaches to your origin i.e. OCI instance.
+
+Access OWASP juice shop application. This application purposefully has many security 
+vulnerabilities. Attack certain selected security vulnerabilities and observe that 
+application is successfully attacked.
+
+
+  
+## Step 3 - Setting WAF Rules
+
 
 
 ### Add Access Control rules to Policy
@@ -189,9 +184,6 @@ In postman run a get request on the main URL 11 times, on the 11th it should tri
 
 #### Captcha Challenge
 In a browser go to URL/captcha and it should trigger the captcha challenge
-
-
-
 
 ### Grafana Plugin with WAF data
 First: Set up [OCI with Grafana](https://blogs.oracle.com/cloudnative/data-source-grafana) 
