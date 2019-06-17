@@ -10,7 +10,7 @@ Provision an instance in OCI region.
 Download OCI Client
 `bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"` 
 
-## Step 1- Launch Webapp and add it to a domain
+## Step 1 - Launch Webapp and add it to a domain
 
 **Install docker on this VM.**
 
@@ -31,7 +31,7 @@ accessible from internet.
 
 Register to website www.freenom.com to create domain (For ex.) `www.trywaf.tk`
   
-## Step 2 Tie together OCI WAF with Web application
+## Step 2 - Tie together OCI WAF with Web application
 
 Ensure that DNS A record is created for your domain that resolve to public IP of OCI instance.
 
